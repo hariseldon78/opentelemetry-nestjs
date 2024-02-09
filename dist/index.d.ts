@@ -3,6 +3,7 @@ export * from './OpenTelemetryModule';
 export * from './OpenTelemetryModuleAsyncOption';
 export * from './OpenTelemetryModuleConfig';
 export * from './Trace/Decorators/Span';
+export * from './Trace/Decorators/Traceable';
 export * from './Trace/TraceService';
 export * from './Trace/Injectors/ControllerInjector';
 export * from './Trace/Injectors/EventEmitterInjector';

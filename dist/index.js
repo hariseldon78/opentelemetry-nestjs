@@ -19,6 +19,7 @@ __exportStar(require("./OpenTelemetryModule"), exports);
 __exportStar(require("./OpenTelemetryModuleAsyncOption"), exports);
 __exportStar(require("./OpenTelemetryModuleConfig"), exports);
 __exportStar(require("./Trace/Decorators/Span"), exports);
+__exportStar(require("./Trace/Decorators/Traceable"), exports);
 __exportStar(require("./Trace/TraceService"), exports);
 __exportStar(require("./Trace/Injectors/ControllerInjector"), exports);
 __exportStar(require("./Trace/Injectors/EventEmitterInjector"), exports);

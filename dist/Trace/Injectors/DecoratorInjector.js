@@ -27,12 +27,10 @@ let DecoratorInjector = class DecoratorInjector extends BaseTraceInjector_1.Base
     injectProviders() {
         const providers = this.getProviders();
         for (const provider of providers) {
-            if (this.isDecorated(provider.metatype)) {
-                throw new Error(`@Span decorator not used with @Injectable provider class. Class: ${provider.name}`);
-            }
             const keys = this.metadataScanner.getAllFilteredMethodNames(provider.metatype.prototype);
             for (const key of keys) {
-                if (this.isDecorated(provider.metatype.prototype[key]) &&
+                if ((this.isDecorated(provider.metatype) ||
+                    this.isDecorated(provider.metatype.prototype[key])) &&
                     !this.isAffected(provider.metatype.prototype[key])) {
                     provider.metatype.prototype[key] = this.wrap(provider.metatype.prototype[key], this.getPrefix(provider.metatype.prototype[key], `Provider->${provider.name}`));
                     this.loggerService.log(`Mapped ${provider.name}.${key}`, this.constructor.name);
